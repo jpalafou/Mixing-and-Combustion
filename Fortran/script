@@ -1,0 +1,20 @@
+make clean
+clear
+
+rm /Users/jonathan/Documents/DataDump/out_Fortran/*
+
+echo
+echo "Compiling..."
+echo
+
+make
+
+echo
+echo "Done!"
+echo
+
+./main
+
+make clean
+
+osascript -e 'display notification "The calculations are complete!" with title "Fortran code"'
