@@ -3,7 +3,7 @@ clc
 close all
 
 InPath = '/Users/jonathan/Documents/DataDump/out_Fortran/';
-filenamepref = 'out_u';
+filenamepref = 'out_T';
 
 PLOT = true;
 myylabel = '';

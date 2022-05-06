@@ -13,11 +13,11 @@ contains
 
     ! define initial density ratio
     if (IGNITOR) then
-      rho_ratio = find_rho(T_ref,1.d0,0.d0,0.d0,0.d0)/ &
-      find_rho(T_ref,0.d0,1.d0,0.d0,0.d0)
+      rho_ratio = find_rho(T_ref,Y_O_i,1.d0 - Y_O_i,0.d0,0.d0)/ &
+      find_rho(T_ref,1.d0 - Y_F_i,Y_F_i,0.d0,0.d0)
     else
-      rho_ratio = find_rho(T_ref,1.d0,0.d0,0.d0,0.d0)/ &
-      find_rho(T_ref/h_ratio,0.d0,1.d0,0.d0,0.d0)
+      rho_ratio = find_rho(T_ref,Y_O_i,1.d0 - Y_O_i,0.d0,0.d0)/ &
+      find_rho(T_ref/h_ratio,1.d0 - Y_F_i,Y_F_i,0.d0,0.d0)
     end if
 
     ! initialize kappa bounds
@@ -62,8 +62,8 @@ contains
       u(m,1) = ((1 + (1/u_ratio))/2) + (((1 - (1/u_ratio))/2)*tanh(G*y(m)))
 
       ! composition
-      Y1(m,1) = ((Y1_yu + Y1_yl)/2) + (((Y1_yu - Y1_yl)/2)*tanh(G*y(m)))
-      Y2(m,1) = ((Y2_yu + Y2_yl)/2) + (((Y2_yu - Y2_yl)/2)*tanh(G*y(m)))
+      Y1(m,1) = ((Y_O_i + 1.d0 - Y_F_i)/2) + (((Y_O_i - (1.d0 - Y_F_i))/2)*tanh(G*y(m)))
+      Y2(m,1) = (((1.d0 - Y_O_i) + Y_F_i)/2) + ((((1.d0 - Y_O_i) - Y_F_i)/2)*tanh(G*y(m)))
 
       ! kappa
       if (m .ne. 1 .and. m .ne. ny) then

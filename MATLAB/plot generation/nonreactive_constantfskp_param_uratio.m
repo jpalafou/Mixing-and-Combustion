@@ -1,11 +1,11 @@
 close all
 
 impath = '/Users/jonathan/Documents/DataDump/MATLAB/nonreactive constant fs kappa/parameter study/uratio/';
-expath = '/Users/jonathan/Google Drive/My Drive/Winter 2022/research/plots/nonreactive constant fs kappa/parameter study/uratio/';
+expath = '/Users/jonathan/Google Drive/My Drive/Spring 2022/199 research/plots/nonreactive constant fs kappa/parameter study/uratio/';
 files = {'2.mat', '4.mat', '8.mat'};
 run getPlotProperties.m
 Ylim = [-2 2.5];
-lgd_size = 56;
+lgd_size = 48;
 
 % u vs y
 figure(1)
@@ -103,7 +103,7 @@ saveas(3,strcat(expath,'kappa.png'))
 
 figure(4)
 lgd = legend('u_\infty/u_{-\infty} = 2','u_\infty/u_{-\infty} = 4','u_\infty/u_{-\infty} = 8','location','best');
-lgd.FontSize = lgd_size;
+lgd.FontSize = fontSize;
 saveas(4,strcat(expath,'h.png'))
 
 figure(5)

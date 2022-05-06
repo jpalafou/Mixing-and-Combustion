@@ -1,7 +1,7 @@
 close all
 
 impath = '/Users/jonathan/Documents/DataDump/MATLAB/nonreactive constant fs kappa/parameter study/Pr/';
-expath = '/Users/jonathan/Google Drive/My Drive/Winter 2022/research/plots/nonreactive constant fs kappa/parameter study/Pr/';
+expath = '/Users/jonathan/Google Drive/My Drive/Spring 2022/199 research/plots/nonreactive constant fs kappa/parameter study/Pr/';
 files = {'0_7.mat', '1_0.mat', '1_3.mat'};
 run getPlotProperties.m
 Ylim = [-2.5 3];
@@ -115,7 +115,7 @@ saveas(3,strcat(expath,'kappa.png'))
 
 figure(4)
 lgd = legend('Pr = 0.7','Pr = 1.0','Pr = 1.3','location','best');
-lgd.FontSize = lgd_size; 
+lgd.FontSize = fontSize; 
 saveas(4,strcat(expath,'h.png'))
 
 figure(5)

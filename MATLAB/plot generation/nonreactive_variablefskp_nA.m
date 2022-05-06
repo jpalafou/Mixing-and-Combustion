@@ -1,10 +1,10 @@
 close all
 
 impath = '/Users/jonathan/Documents/DataDump/MATLAB/nonreactive variable fs kappa/main/';
-expath = '/Users/jonathan/Google Drive/My Drive/Spring 2022/199 research/plots/nonreactive variable fs kappa/main/+A/';
+expath = '/Users/jonathan/Google Drive/My Drive/Spring 2022/199 research/plots/nonreactive variable fs kappa/main/-A/';
 files = {'0.mat', '1.mat', '2.mat'};
 run getPlotProperties.m
-Ylim = [-2 2];
+Ylim = [-5 5];
 
 % kappa vs y
 figure(1)
@@ -26,7 +26,7 @@ ax = gca;
 ax.LineWidth = gridlineWidth;
 xlim([Ylim(1) Ylim(2)])
 
-load(strcat(impath, '+A.mat'))
+load(strcat(impath, '-A.mat'))
 global kmax
 global Nx
 global xvector

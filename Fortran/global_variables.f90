@@ -13,7 +13,7 @@ module global
   ! domain parameters
   real(dp), parameter :: Dxi = 0.00000015d0 ! mesh size in x (initial guess)
   real(dp), parameter :: Dyi = 0.01d0 ! mesh size in y (initial guess)
-  real(dp), parameter :: xf = 0.01d0 ! 3.0d0 ! final position in x
+  real(dp), parameter :: xf = 0.1d0 ! 3.0d0 ! final position in x
   real(dp), parameter :: yu = 12.0d0 ! upper y boundary
   real(dp), parameter :: yl = -12.d0 ! lower y boundary
   integer, parameter :: nx_log = 1000 ! 1000 ! number of points in x to log
@@ -24,8 +24,8 @@ module global
   real(dp) :: Pr = 1.0d0 ! Prandtl number
   real(dp) :: T_ref = 300.d0 ! 300.d0 ! free stream temperature at y = yu, [K]
   real(dp) :: u_ratio = 4.0d0 ! u_{\infinity} / u_{-\infinity}
-  real(dp) :: Y_O_i = 11.d0/12.d0 ! initial mass fraction of oxygen-rich stream
-  real(dp) :: Y_F_i = 2.d0/3.d0 ! initial mass fraction of fuel-rich stream
+  real(dp) :: Y_O_i = 11.d0/12.d0 ! 1.d0 ! initial mass fraction of oxygen-rich stream
+  real(dp) :: Y_F_i = 2.d0/3.d0 ! 1.d0 ! initial mass fraction of fuel-rich stream
 
   ! flags
   logical :: BUILDMAIN = .true. ! run the main loop?
@@ -41,10 +41,10 @@ module global
   real(dp) :: G_ignitor = 0.1d0
   real(dp) :: h_max = 20.d0/3.d0 ! maxmimum normalized enthalpy (for ignitor)
   real(dp) :: xr = 0.15d0 ! position in x to begin a variation of A/x for kappa
-  real(dp) :: Y1_yu = 1.d0 ! free stream composition of fluid 1 at y = yu
-  real(dp) :: Y1_yl = 0.d0 ! free stream composition of fluid 1 at y = yl
-  real(dp) :: Y2_yu = 0.d0 ! free stream composition of fluid 2 at y = yu
-  real(dp) :: Y2_yl = 1.d0 ! free stream composition of fluid 2 at y = yl
+  ! real(dp) :: Y1_yu = 1.d0 ! free stream composition of fluid 1 at y = yu
+  ! real(dp) :: Y1_yl = 0.d0 ! free stream composition of fluid 1 at y = yl
+  ! real(dp) :: Y2_yu = 0.d0 ! free stream composition of fluid 2 at y = yu
+  ! real(dp) :: Y2_yl = 1.d0 ! free stream composition of fluid 2 at y = yl
 
   ! dimensional input variables
   ! fluid1 = O2

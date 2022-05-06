@@ -1,7 +1,7 @@
 close all
 
 impath = '/Users/jonathan/Documents/DataDump/MATLAB/nonreactive constant fs kappa/parameter study/f/';
-expath = '/Users/jonathan/Google Drive/My Drive/Winter 2022/research/plots/nonreactive constant fs kappa/parameter study/f/';
+expath = '/Users/jonathan/Google Drive/My Drive/Spring 2022/199 research/plots/nonreactive constant fs kappa/parameter study/f/';
 files = {'0.mat', '1.mat', '2.mat'};
 run getPlotProperties.m
 Ylim = [-3.5 3.5];
@@ -17,6 +17,7 @@ hold on
 ax = gca;
 ax.LineWidth = gridlineWidth;
 xlim([Ylim(1) Ylim(2)])
+ylim([0.2 1.001])
 
 % v vs y
 figure(2)
@@ -104,7 +105,7 @@ saveas(3,strcat(expath,'kappa.png'))
 
 figure(4)
 lgd = legend('f* = 0','f* = 1','f* = 2','location','best');
-lgd.FontSize = lgd_size; 
+lgd.FontSize = fontSize; 
 saveas(4,strcat(expath,'h.png'))
 
 figure(5)

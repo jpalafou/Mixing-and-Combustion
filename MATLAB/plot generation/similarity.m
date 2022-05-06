@@ -30,6 +30,7 @@ hold on
 ax = gca;
 ax.LineWidth = gridlineWidth;
 xlim([-2 2.5])
+ylim([0.2 1.001])
 
 plot(yvector,u(:,j1),'LineWidth',lineWidth)
 plot(yvector,u(:,j2),'--','LineWidth',lineWidth)
@@ -44,6 +45,7 @@ hold on
 ax = gca;
 ax.LineWidth = gridlineWidth;
 xlim([-0.75 0.75])
+ylim([0.2 1.001])
 
 plot(eta(:,j1),u(:,j1),'LineWidth',lineWidth)
 plot(eta(:,j2),u(:,j2),'--','LineWidth',lineWidth)
@@ -97,6 +99,7 @@ hold on
 ax = gca;
 ax.LineWidth = gridlineWidth;
 xlim([-7 8])
+ylim([0.2 1.001])
 
 plot(yvector,u(:,j1),'LineWidth',lineWidth)
 plot(yvector,u(:,j2),'--','LineWidth',lineWidth)
@@ -111,6 +114,7 @@ hold on
 ax = gca;
 ax.LineWidth = gridlineWidth;
 xlim([-2 2])
+ylim([0.2 1.001])
 
 plot(eta(:,j1),u(:,j1),'LineWidth',lineWidth)
 plot(eta(:,j2),u(:,j2),'--','LineWidth',lineWidth)
