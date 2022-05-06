@@ -1,3 +1,7 @@
+global lineWidth
+global fontSize
+global gridlineWidth
+
 fontSize = 64;
 lineWidth = 8;
 gridlineWidth = 3;

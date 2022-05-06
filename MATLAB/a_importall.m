@@ -2,14 +2,11 @@ clear
 clc
 
 InPath = '/Users/jonathan/Documents/DataDump/out_Fortran/';
+Calculate_eta = 1;
+Calculate_wF_integral = 0;
 
 %% import data
 fprintf('Importing data...\n')
-
-% import scalar variables
-global kmax
-global Ny
-global ENF
 
 ScalarSave = readfromfortran('out_ScalarSave.bin',50,1);
 
@@ -20,7 +17,6 @@ deltay = ScalarSave(4);
 x0ind = ScalarSave(6);
 F = ScalarSave(11);
 ENF = ScalarSave(12);
-kmax = ScalarSave(13);
 
 fprintf('\tImported scalar parameters\n')
 
@@ -45,4 +41,17 @@ Y2 = readfromfortran('out_Y2.bin',Ny,Nx);
 Y3 = readfromfortran('out_Y3.bin',Ny,Nx);
 Y4 = readfromfortran('out_Y4.bin',Ny,Nx);
 fprintf('\tImported scalar parameters\n')
+
+%% additional calcs
+if Calculate_eta
+    run calculate_eta.m
+    fprintf('\tCalculated eta\n')
+end
+
+if Calculate_wF_integral
+    run calculate_wF_int.m
+    fprintf('\tCalcualte wF integral\n')
+end
+
 fprintf('Done!\n')
+
