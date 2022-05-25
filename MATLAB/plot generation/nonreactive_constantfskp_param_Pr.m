@@ -74,6 +74,8 @@ ax.LineWidth = gridlineWidth;
 
 for j = 1:3
     load(strcat(impath,files{j}))
+
+    Pr = ScalarSave(9);
     
     switch j
         case 1
@@ -97,14 +99,19 @@ for j = 1:3
     plot(yvector,h{end}(:,end),'LineWidth',lineWidth,'Color',col)
     
     figure(5)
-    plot(yvector,Y1{end}(:,end),'LineWidth',lineWidth,'Color',col);
-    plot(yvector,Y2{end}(:,end),':','LineWidth',lineWidth,'Color',col);
+    pY1(j) = plot(yvector,Y1{end}(:,end),'LineWidth',lineWidth,'Color',col);
+    pY2(j) = plot(yvector,Y2{end}(:,end),':','LineWidth',lineWidth,'Color',col);
+
+    Legend1{j} = strcat("Y_{O}, Pr = ", num2str(Pr));
+    Legend2{j} = strcat("Y_{F}, Pr = ", num2str(Pr));
     
     figure(6)
     plot(u{end}(:,end),h{end}(:,end),'LineWidth',lineWidth,'Color',col);
 end
 
 figure(1)
+lgd = legend('Pr = 0.7','Pr = 1.0','Pr = 1.3','location','best');
+lgd.FontSize = fontSize; 
 saveas(1,strcat(expath,'u.png'))
 
 figure(2)
@@ -114,19 +121,15 @@ figure(3)
 saveas(3,strcat(expath,'kappa.png'))
 
 figure(4)
-lgd = legend('Pr = 0.7','Pr = 1.0','Pr = 1.3','location','best');
-lgd.FontSize = fontSize; 
 saveas(4,strcat(expath,'h.png'))
 
 figure(5)
-lgd = legend('Y_{O}, Pr = 0.7', ...
-    'Y_{F}, Pr = 0.7', ...
-    'Y_{O}, Pr = 1.0', ...
-    'Y_{F}, Pr = 1.0', ...
-    'Y_{O}, Pr = 1.3', ...
-    'Y_{F}, Pr = 1.3', ...
-    'location','best');
-lgd.FontSize = lgd_size; 
+lgd1 = legend(pY1,Legend1,'location','east');
+lgd1.FontSize = fontSize-16;
+ah1=axes('position',get(gca,'position'),'visible','off');
+lgd2 = legend(ah1,pY2,Legend2,'location','west');
+lgd2.FontSize = fontSize-16;
+lgd2.LineWidth = 3;
 saveas(5,strcat(expath,'Y.png'))
 
 figure(6)

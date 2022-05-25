@@ -36,7 +36,11 @@ program main
   end if
   print*
 
-  write(*,'(A17,F9.2)') 'u_+inf/u_-inf = ', u_ratio
+  if (INVERSE) then
+    write(*,'(A17,F9.2)') 'u_+inf/u_-inf = ', 1.d0/u_ratio
+  else
+    write(*,'(A17,F9.2)') 'u_+inf/u_-inf = ', u_ratio
+  end if
   write(*,'(A17,F9.2)') 'Pr = ', Pr
   if (KCONSTANT) then
     write(*,'(A17,F9.2)') 'f* = ', F

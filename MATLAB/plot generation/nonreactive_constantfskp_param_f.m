@@ -90,11 +90,16 @@ for j = 1:3
     plot(yvector,h{end}(:,end),'LineWidth',lineWidth,'Color',col)
     
     figure(5)
-    plot(yvector,Y1{end}(:,end),'LineWidth',lineWidth,'Color',col);
-    plot(yvector,Y2{end}(:,end),':','LineWidth',lineWidth,'Color',col);
+    pY1(j) = plot(yvector,Y1{end}(:,end),'LineWidth',lineWidth,'Color',col);
+    pY2(j) = plot(yvector,Y2{end}(:,end),':','LineWidth',lineWidth,'Color',col);
+
+    Legend1{j} = strcat("Y_{O}, f* = ", num2str(F));
+    Legend2{j} = strcat("Y_{F}, f* = ", num2str(F));
 end
 
 figure(1)
+lgd = legend('f* = 0','f* = 1','f* = 2','location','best');
+lgd.FontSize = fontSize; 
 saveas(1,strcat(expath,'u.png'))
 
 figure(2)
@@ -104,17 +109,13 @@ figure(3)
 saveas(3,strcat(expath,'kappa.png'))
 
 figure(4)
-lgd = legend('f* = 0','f* = 1','f* = 2','location','best');
-lgd.FontSize = fontSize; 
 saveas(4,strcat(expath,'h.png'))
 
 figure(5)
-lgd = legend('Y_{O}, f* = 0', ...
-    'Y_{F}, f* = 0', ...
-    'Y_{O}, f* = 1', ...
-    'Y_{F}, f* = 1', ...
-    'Y_{O}, f* = 2', ...
-    'Y_{F}, f* = 2', ...
-    'location','best');
-lgd.FontSize = lgd_size; 
+lgd1 = legend(pY1,Legend1,'location','east');
+lgd1.FontSize = fontSize-10;
+ah1=axes('position',get(gca,'position'),'visible','off');
+lgd2 = legend(ah1,pY2,Legend2,'location','west');
+lgd2.FontSize = fontSize-10;
+lgd2.LineWidth = 3;
 saveas(5,strcat(expath,'Y.png'))

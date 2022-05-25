@@ -4,32 +4,33 @@ module global
 
   ! output path
   character(len=*), parameter :: &
-    OutPath = '/Users/jonathan/Documents/DataDump/out_Fortran/'
+    OutPath = '/Users/jonathan/Documents/DataDump/reactive inverse f 0/'
 
   ! define precision for real variables
   integer, parameter :: dp = selected_real_kind(15, 307)
 
   ! INPUTS:
   ! domain parameters
-  real(dp), parameter :: Dxi = 0.00000015d0 ! mesh size in x (initial guess)
-  real(dp), parameter :: Dyi = 0.01d0 ! mesh size in y (initial guess)
-  real(dp), parameter :: xf = 0.1d0 ! 3.0d0 ! final position in x
-  real(dp), parameter :: yu = 12.0d0 ! upper y boundary
-  real(dp), parameter :: yl = -12.d0 ! lower y boundary
+  real(dp), parameter :: Dxi = 0.00000009d0 ! mesh size in x (initial guess)
+  real(dp), parameter :: Dyi = 0.007d0 ! mesh size in y (initial guess)
+  real(dp), parameter :: xf = 2.d0 ! 3.0d0 ! final position in x
+  real(dp), parameter :: yu = 36.0d0 ! upper y boundary
+  real(dp), parameter :: yl = -36.d0 ! lower y boundary
   integer, parameter :: nx_log = 1000 ! 1000 ! number of points in x to log
 
   ! most-used inputs
-  real(dp) :: Da = 1500000.d0 ! non-dimensional Damkohler number, A L rho_inf^0.75 / u_inf
-  real(dp) :: F = 1.0d0 ! f* = F/x*
+  real(dp) :: Da = 1500000.d0 ! 1500000.d0 ! non-dimensional Damkohler number, A L rho_inf^0.75 / u_inf
+  real(dp) :: F = 0.0d0 ! f* = F/x*
   real(dp) :: Pr = 1.0d0 ! Prandtl number
   real(dp) :: T_ref = 300.d0 ! 300.d0 ! free stream temperature at y = yu, [K]
   real(dp) :: u_ratio = 4.0d0 ! u_{\infinity} / u_{-\infinity}
-  real(dp) :: Y_O_i = 11.d0/12.d0 ! 1.d0 ! initial mass fraction of oxygen-rich stream
-  real(dp) :: Y_F_i = 2.d0/3.d0 ! 1.d0 ! initial mass fraction of fuel-rich stream
+  real(dp) :: Y_O_i = 1.d0 ! 11.d0/12.d0 ! initial mass fraction of oxygen-rich stream
+  real(dp) :: Y_F_i = 1.d0 ! 2.d0/3.d0 ! initial mass fraction of fuel-rich stream
 
   ! flags
   logical :: BUILDMAIN = .true. ! run the main loop?
   logical :: IGNITOR = .true. ! model h as an ignitor or monotonic
+  logical :: INVERSE = .true. ! make oxidizer the slow stream and fuel the fast stream?
   logical :: KCONSTANT= .true. ! kappa is constant in the free streams or it varies as A/x
 
   ! stability

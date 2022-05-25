@@ -1,8 +1,8 @@
 clear
 clc
 
-InPath = '/Users/jonathan/Documents/DataDump/out_Fortran/';
-Calculate_eta = 1;
+InPath = '/Users/jonathan/Documents/DataDump/reactive inverse f 2/';
+Calculate_eta = 0;
 Calculate_wF_integral = 0;
 
 %% import data

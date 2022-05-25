@@ -108,6 +108,8 @@ for j = 1:3
 end
 
 figure(1)
+lgd = legend('u_\infty/u_{-\infty} = 2','u_\infty/u_{-\infty} = 4','u_\infty/u_{-\infty} = 8','location','best');
+lgd.FontSize = fontSize; 
 saveas(1,strcat(expath,'u.png'))
 
 figure(2)
@@ -117,8 +119,6 @@ figure(3)
 saveas(3,strcat(expath,'K.png'))
 
 figure(4)
-lgd = legend('u_\infty/u_{-\infty} = 2','u_\infty/u_{-\infty} = 4','u_\infty/u_{-\infty} = 8','location','best');
-lgd.FontSize = lgd_size; 
 saveas(4,strcat(expath,'h.png'))
 
 figure(5)

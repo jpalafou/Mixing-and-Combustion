@@ -111,6 +111,8 @@ for j = 1:3
 end
 
 figure(1)
+lgd = legend('Da = 0','Da = 750000','Da = 1500000','location','best');
+lgd.FontSize = fontSize; 
 saveas(1,strcat(expath,'u.png'))
 
 figure(2)
@@ -120,8 +122,6 @@ figure(3)
 saveas(3,strcat(expath,'K.png'))
 
 figure(4)
-lgd = legend('Da = 0','Da = 750000','Da = 1500000','location','best');
-lgd.FontSize = lgd_size; 
 saveas(4,strcat(expath,'h.png'))
 
 figure(5)

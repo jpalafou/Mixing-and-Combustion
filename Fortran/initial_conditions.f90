@@ -59,7 +59,11 @@ contains
       end if
 
       ! x-velocity
-      u(m,1) = ((1 + (1/u_ratio))/2) + (((1 - (1/u_ratio))/2)*tanh(G*y(m)))
+      if (INVERSE) then
+        u(m,1) = (((1/u_ratio) + 1)/2) + ((((1/u_ratio) - 1)/2)*tanh(G*y(m)))
+      else
+        u(m,1) = ((1 + (1/u_ratio))/2) + (((1 - (1/u_ratio))/2)*tanh(G*y(m)))
+      end if
 
       ! composition
       Y1(m,1) = ((Y_O_i + 1.d0 - Y_F_i)/2) + (((Y_O_i - (1.d0 - Y_F_i))/2)*tanh(G*y(m)))

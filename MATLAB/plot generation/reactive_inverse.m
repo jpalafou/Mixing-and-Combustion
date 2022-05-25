@@ -1,10 +1,10 @@
 close all
 
-impath = '/Users/jonathan/Documents/DataDump/MATLAB/reactive/parameter study/f/';
-expath = '/Users/jonathan/Google Drive/My Drive/Spring 2022/199 research/plots/reactive/parameter study/f/';
-files = {'0_fine.mat', '1.mat', '2.mat'};
+impath = '/Users/jonathan/Documents/DataDump/MATLAB/reactive/inverse/';
+expath = '/Users/jonathan/Google Drive/My Drive/Spring 2022/199 research/plots/reactive/inverse/';
+files = {'f 0.mat', 'base.mat'};
 run getPlotProperties.m
-Ylim = [-15 21];
+Ylim = [-15 24];
 lgd_size = 56;
 
 % u vs y
@@ -72,10 +72,11 @@ grid on
 hold on
 ax = gca;
 ax.LineWidth = gridlineWidth;
-xlim([-1.5 10])
+xlim([-0.5 12])
 
 
-for j = 1:3
+% for j = 1:3
+for j = 1:2
     load(strcat(impath,files{j}))
     
     switch j

@@ -6,9 +6,9 @@
 % filenamepref = 'out_wF';
 
 % PLOT = true;
-myylabel = '';
-n = 5; % number of curves per plot
-ylims = [-0.2 3.1];
+% myylabel = '';
+% n = 5; % number of curves per plot
+% ylims = [-0.2 3.1];
 
 run 'plot generation'/getPlotProperties.m
 
@@ -40,6 +40,6 @@ fprintf('\tImported array as list\n')
 fprintf('Data imported successfully!\n\n')
 
 %% plotting
-if PLOT
-    plotchop(1,A(:,300:end),xvector(300:end),yvector,n,myylabel,ylims)
-end
+% if PLOT
+%     plotchop(1,A(:,300:end),xvector(300:end),yvector,n,myylabel,ylims)
+% end

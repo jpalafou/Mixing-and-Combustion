@@ -2,19 +2,19 @@ close all
 
 expath = '/Users/jonathan/Google Drive/My Drive/Spring 2022/199 research/plots/reactive/mesh size independence/';
 
-filenamepref = 'out_T';
-savename = 'msi_T.png';
-Ylab = 'T [K]';
-Ylim = [-8 8];
-loc = 'northwest';
-fracs = [1e-3 0.5 1];
+% filenamepref = 'out_T';
+% savename = 'msi_T.png';
+% Ylab = 'T [K]';
+% Ylim = [-8 8];
+% loc = 'northwest';
+% fracs = [1e-3 0.5 1];
 
-% filenamepref = 'out_wF';
-% savename = 'msi_wF.png';
-% Ylab = '\omega*_F';
-% Ylim = [0 3.6];
-% loc = 'best';
-% fracs = [0.5 0.75 1];
+filenamepref = 'out_wF';
+savename = 'msi_wF.png';
+Ylab = '$|\dot{\omega^*}_F|$';
+Ylim = [0 3.6];
+loc = 'best';
+fracs = [0.5 0.75 1];
 
 run getPlotProperties.m
 
@@ -22,7 +22,11 @@ run getPlotProperties.m
 figure(1)
 set(gcf, 'Position', get(0, 'Screensize'),'DefaultAxesFontSize',fontSize)
 xlabel('y*')
-ylabel(Ylab)
+if Ylab(1) == '$'
+    ylabel(Ylab,'interpreter','latex')
+else
+    ylabel(Ylab)
+end
 grid on
 hold on
 ax = gca;

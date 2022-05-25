@@ -2,8 +2,8 @@ clear
 clc
 close all
 
-InPath = '/Users/jonathan/Documents/DataDump/out_Fortran/';
-filenamepref = 'out_T';
+InPath = '/Users/jonathan/Documents/DataDump/reactive inverse f 2/';
+filenamepref = 'out_wF';
 
 PLOT = true;
 myylabel = '';

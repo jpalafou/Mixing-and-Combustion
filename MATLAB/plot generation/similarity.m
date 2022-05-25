@@ -34,6 +34,10 @@ ylim([0.2 1.001])
 
 plot(yvector,u(:,j1),'LineWidth',lineWidth)
 plot(yvector,u(:,j2),'--','LineWidth',lineWidth)
+lgd = legend(strcat('x* = ',num2str(xvector(j1))),...
+    strcat('x* = ',num2str(xvector(j2))),...
+    'location','best');
+lgd.FontSize = fontSize;
 
 %% u vs eta constant kappa
 figure(2)
@@ -49,10 +53,6 @@ ylim([0.2 1.001])
 
 plot(eta(:,j1),u(:,j1),'LineWidth',lineWidth)
 plot(eta(:,j2),u(:,j2),'--','LineWidth',lineWidth)
-legend(strcat('x* = ',num2str(xvector(j1))),...
-    strcat('x* = ',num2str(xvector(j2))),...
-    'location','best')
-lgd.FontSize = LegendFontSize;
 
 %% h vs y constant kappa
 figure(3)
@@ -103,6 +103,10 @@ ylim([0.2 1.001])
 
 plot(yvector,u(:,j1),'LineWidth',lineWidth)
 plot(yvector,u(:,j2),'--','LineWidth',lineWidth)
+lgd = legend(strcat('x* = ',num2str(xvector(j1))),...
+    strcat('x* = ',num2str(xvector(j2))),...
+    'location','best');
+lgd.FontSize = fontSize;
 
 %% u vs eta variable kappa
 figure(6)
@@ -118,10 +122,6 @@ ylim([0.2 1.001])
 
 plot(eta(:,j1),u(:,j1),'LineWidth',lineWidth)
 plot(eta(:,j2),u(:,j2),'--','LineWidth',lineWidth)
-legend(strcat('x* = ',num2str(xvector(j1))),...
-    strcat('x* = ',num2str(xvector(j2))),...
-    'location','best')
-lgd.FontSize = LegendFontSize;
 
 %% h vs y variable kappa
 figure(7)
