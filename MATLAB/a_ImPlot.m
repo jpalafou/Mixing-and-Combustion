@@ -2,7 +2,8 @@ clear
 clc
 close all
 
-InPath = '/Users/jonathan/Documents/DataDump/reactive inverse f 2/';
+% InPath = '/Users/jonathan/Documents/DataDump/reactive multi flame Da 3000000 fine/';
+InPath = '/Users/jonathan/Desktop/data2/';
 filenamepref = 'out_wF';
 
 PLOT = true;
@@ -16,7 +17,7 @@ run 'plot generation'/getPlotProperties.m
 fprintf('Importing data...\n')
 
 % import scalar variables
-ScalarSave = readfromfortran('out_ScalarSave.bin',50,1);
+ScalarSave = readfromfortran('out_ScalarSave.bin',1001,1);
 
 Nx = ScalarSave(1);
 Ny = ScalarSave(2);

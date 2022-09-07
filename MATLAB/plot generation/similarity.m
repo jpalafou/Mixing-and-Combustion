@@ -6,7 +6,8 @@ j1 = 401;
 j2 = 601;
 n = 5;
 LegendFontSize = 64;
-exPath = '/Users/jonathan/Google Drive/My Drive/Spring 2022/199 research/plots/nonreactive similarity/';
+% exPath = '/Users/jonathan/Google Drive/My Drive/Spring 2022/199 research/plots/nonreactive similarity/';
+exPath = '/Users/jonathan/Desktop/plots/nonreactive similarity/';
 
 run getPlotProperties.m
 

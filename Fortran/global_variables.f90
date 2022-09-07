@@ -11,8 +11,8 @@ module global
 
   ! INPUTS:
   ! domain parameters
-  real(dp), parameter :: Dxi = 0.00000009d0 ! mesh size in x (initial guess)
-  real(dp), parameter :: Dyi = 0.007d0 ! mesh size in y (initial guess)
+  real(dp), parameter :: Dxi = 0.000000049d0 ! mesh size in x (initial guess)
+  real(dp), parameter :: Dyi = 0.005d0 ! mesh size in y (initial guess)
   real(dp), parameter :: xf = 2.d0 ! 3.0d0 ! final position in x
   real(dp), parameter :: yu = 36.0d0 ! upper y boundary
   real(dp), parameter :: yl = -36.d0 ! lower y boundary
