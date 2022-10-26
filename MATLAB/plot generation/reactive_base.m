@@ -4,17 +4,17 @@ close all
 
 n = 5;
 % exPath = '/Users/jonathan/Google Drive/My Drive/Spring 2022/199 research/plots/reactive/main/';
-exPath = '/Users/jonathan/Desktop/plots/reactive/main/';
+exPath = '~/Downloads/';
 
 run getPlotProperties.m
 
 % load data
-load('/Users/jonathan/Documents/DataDump/MATLAB/reactive/main/base5.mat')
+load('~/Google Drive/My Drive/Sirignano paper/resources/DataDump/MATLAB/reactive/main/base5_2.mat')
 
 % change to directory than contains plotchop()
-cd /Users/jonathan/Documents/GitHub/Mixing-and-Combustion-2.0/MATLAB/
+cd ~/Desktop/Mixing-and-Combustion/MATLAB/
 
-j = 1000;
+j = 1001;
 % make plots
 plotchop(1,u(:,1:j),xvector(1:j),yvector,n,'u*',[-4 7])
 

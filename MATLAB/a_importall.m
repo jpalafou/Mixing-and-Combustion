@@ -1,7 +1,7 @@
 clear
 clc
 
-InPath = '/Users/jonathan/Documents/DataDump/reactive inverse f 2/';
+InPath = '~/Google Drive/My Drive/Sirignano paper/resources/DataDump/reactive base 5/';
 Calculate_eta = 0;
 Calculate_wF_integral = 0;
 
@@ -10,7 +10,7 @@ fprintf('Importing data...\n')
 
 ScalarSave = readfromfortran('out_ScalarSave.bin',50,1);
 
-Nx = ScalarSave(1);
+Nx = ScalarSave(1)+1;
 Ny = ScalarSave(2);
 deltax = ScalarSave(3);
 deltay = ScalarSave(4);
